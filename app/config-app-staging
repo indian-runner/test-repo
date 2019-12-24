@@ -1,0 +1,26 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNU1USXlNREUxTXpneU5Gb1hEVEk1TVRJeE56RTFNemd5TkZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTE5pClB2VTZURnBtQ24zM3lORnMyRHV6N3dMbXRjdE41STlmWUt3amNVMkMxNWQrcVplVmszWDh4R3Q1bVYzMlg2MEgKRmNvcXNsRDNIbW1DQzM0ekdTaGhsVkY2N013Wnd4Smh3eG84NStmWUxzaWJ3RTI4VzMyT2ZtbmZaVDhDc1M2dgo5ZXRWVHVTdnNTQkw4R1Z0dXkzeXM0NTgwUHVDVkNQUzhHZENTUkpNNi9NTTZlTUhSa1JOb0lwOHREaVhySkIxCmVNQjhpSk4xekpvNjRTR2tMdVpVZDRrTkh6STRHMS9Fclo0V1lZQnhacVNMcmdwSm1mSjAxYWFCcFBIb3YxRU0KeUlTTTU2ZGdxNTMzRng3bWJ5dEN6aVpNRDA5VGNsTzdIaWtyR0JBcE9RVkgzbzQ3Mm9XSWRwUExtdEpaaXNleAp0d0QreVRBS0swLzR1WVp2dFU4Q0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFIQmNPZGdTYjBVdjRMYS9tWTdjUGNkcjdvUE4KU1o1WUhDNXREeHdwcm1UZml0M1Y3SUN1aHdHdVVyTTIrcktQSVhlV3hjdFhBQWwzN2w2aW5rWU0vMG1kd3I4RwptQm1CeFBHcU5sS2F3RUJwbnVPYTdSVDdNVExyUm9pb1NORGFFamx0S1BINDJhL3JaNjlSTDVIaGMvRmhlWEdvCkpLUkZPdjM5ODhkcHFPZkRZczZCb0tmQVoraFVsRkJoc2tGZ01vaGptUTZUejdxOTFWZHRBOEZjekZ2S0xBL1EKOWM0NGNQa3FwM0hMVjFtMTJ6VEFNd1BxRFZUWEJqY1F0WWUzTk4rN09ieXlFRGwwSGlVdWgxR1g1N0pVWTUxcgpzRU1oaW5WUDI0YUR3Mi8wdjVTVHdOU3c3eFlxUUE3QXl0R0duZjBheElWa08xT0ZDaWhPZUhiazFFOD0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://50F90A3C0C8A2F65E7E65ED1A6986415.yl4.eu-west-1.eks.amazonaws.com
+  name: arn:aws:eks:eu-west-1:766369807176:cluster/env-app-staging-cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:eu-west-1:766369807176:cluster/env-app-staging-cluster
+    user: arn:aws:eks:eu-west-1:766369807176:cluster/env-app-staging-cluster
+  name: arn:aws:eks:eu-west-1:766369807176:cluster/env-app-staging-cluster
+current-context: arn:aws:eks:eu-west-1:766369807176:cluster/env-app-staging-cluster
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:eu-west-1:766369807176:cluster/env-app-staging-cluster
+users:
+- name: my-user
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      command: aws-iam-authenticator
+      args:
+        - "token"
+        - "-i"
+        - "env-app-staging-cluster"
